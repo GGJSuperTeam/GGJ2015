@@ -23,17 +23,10 @@ public class FollowTarget : MonoBehaviour {
 			targ.x = target.position.x;
 			targ.y = target.position.y;
 			
-			
-			Debug.Log ("self = " + self + " targ " + targ);
-			
 			Vector2 diff = targ - self;
-			Debug.Log ("diff = " + diff);
-			
 			
 			Vector3 diff3 = new Vector3(diff.x, diff.y, 0);
 			transform.position += diff3 * speed * Time.deltaTime;
-			
-			//transform.Translate(Vector2.Lerp (self, targ, Time.deltaTime * speed));
 		}
 	}
 }
