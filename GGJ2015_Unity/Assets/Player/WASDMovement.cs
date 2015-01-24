@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
 
-	public bool physics = false;
+	public bool physics = true;
 	public float speed = 100.0f;
 
 	// Use this for initialization
