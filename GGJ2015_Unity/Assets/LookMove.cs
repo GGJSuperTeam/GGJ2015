@@ -11,6 +11,7 @@ public class LookMove : MonoBehaviour {
 	public Thumbstick stick = Thumbstick.Left;
 	public bool invertDirection = false;
     public bool dylMove = false;
+    public bool noLook = false;
 	// Private vars
 	Vector2 dir = Vector2.zero;
 	Vector2 facing = Vector2.zero;
@@ -66,13 +67,14 @@ public class LookMove : MonoBehaviour {
 
             angDir *= invert;
 
-            rigidbody2D.AddTorque(angDir * angle * rotationSpeed);
+            if(!noLook) rigidbody2D.AddTorque(angDir * angle * rotationSpeed);
         }
 	}
 	
 	// Push object in direction of facing.
 	void UpdateMovement() {
 		// Assumes facing variable was updated in the UpdateFacing() function
+		Debug.Log ("facing = " + facing + " moveSpeed = " + moveSpeed);
 	    if(dir.magnitude > 0.1f || dylMove) {
 			rigidbody2D.AddForce (facing * moveSpeed);
 		}
