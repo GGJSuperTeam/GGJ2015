@@ -46,9 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Camera\FollowTarget.cs" />
+     <Compile Include="Assets\Deer\Animations\DeerAnimator.cs" />
      <Compile Include="Assets\HelperFunctions.cs" />
      <Compile Include="Assets\LookMove.cs" />
+     <Compile Include="Assets\Obstacles\ExplodingObstacles\ExplodingObstacle.cs" />
+     <Compile Include="Assets\Obstacles\Obstacle.cs" />
+     <Compile Include="Assets\Obstacles\Static\Cubicle.cs" />
+     <Compile Include="Assets\Other\Expire.cs" />
      <Compile Include="Assets\Player\WASDMovement.cs" />
+     <Compile Include="Assets\ZSort.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
