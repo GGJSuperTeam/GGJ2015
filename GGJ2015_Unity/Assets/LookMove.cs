@@ -26,6 +26,7 @@ public class LookMove : MonoBehaviour {
 		} else {
             if (dylMove) {
                 rigidbody2D.mass /= 5;
+                moveSpeed /= 2;
             }
 			thumbstickAxes[0] = "RHorizontal";
 			thumbstickAxes[1] = "RVertical";
@@ -37,8 +38,8 @@ public class LookMove : MonoBehaviour {
 	void Update () {
         if (stick == Thumbstick.Left || !dylMove) {
             UpdateFacing();
-            UpdateMovement();
         }
+        UpdateMovement();
 	}
 	
 	// Rotates (using physics/torque) the object towards the left thumbstick direction.
