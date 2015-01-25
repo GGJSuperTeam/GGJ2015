@@ -48,7 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Camera\FollowTarget.cs" />
      <Compile Include="Assets\Deer\Animations\DeerAnimator.cs" />
-     <Compile Include="Assets\Fields\dialogTrigger.cs" />
+     <Compile Include="Assets\Dialogue\dialogTrigger.cs" />
+     <Compile Include="Assets\Fields\colourTrigger.cs" />
      <Compile Include="Assets\HelperFunctions.cs" />
      <Compile Include="Assets\LookMove.cs" />
      <Compile Include="Assets\Objectives\Boss.cs" />
