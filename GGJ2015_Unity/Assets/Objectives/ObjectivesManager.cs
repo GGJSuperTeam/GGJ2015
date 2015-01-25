@@ -27,7 +27,7 @@ public class ObjectivesManager : MonoBehaviour {
 	
 	GameManager gameManager;	
 
-	//Vector2 actualObjPos = Vector2.zero;
+	Vector2 actualObjPos = Vector2.zero;
 
 	Rect currIconPos;
 	Rect startIconPos;
@@ -93,7 +93,7 @@ public class ObjectivesManager : MonoBehaviour {
 		targetIconPos.x = viewPos.x;//-targetIconPos.width/2.0f;// * Screen.width ;
 		targetIconPos.y = viewPos.y;// - targetIconPos.width;///2.0f;// * Screen.height;
 		
-		//actualObjPos = viewPos;
+		actualObjPos = viewPos;
 	}
 	
 	void UpdateCurrentIcon() {
@@ -127,16 +127,14 @@ public class ObjectivesManager : MonoBehaviour {
 		Vector3 worldPos = Camera.main.ScreenToWorldPoint(newScreenPos);
 		pointer.transform.position = new Vector3(worldPos.x, worldPos.y, -950.0f);
 		
-		// Rotate the pointer to face the target object.
-		/*pointer.transform.rotation = Quaternion.identity;
-		
-		Vector2 dir = actualObjPos - newScreenPos;
-		float angle = Vector2.Angle(Vector2.up, dir);
-		float angDir = HelperFunctions.AngleDir(dir, Vector2.up);*/
-		
-		//Debug.DrawLine (worldPos, worldPos + new Vector3(dir.x, dir.y, 0.0f) * 5.0f);
-		
-		//pointer.transform.Rotate (new Vector3(0,0,angle*angDir));
+		// Rotate the pointer to face the target object.	
+        // NOPE. 
+		//float angle = Vector2.Angle(newScreenPos, actualObjPos);
+		//float angDir = HelperFunctions.AngleDir(newScreenPos.normalized, actualObjPos.normalized);
+        //Debug.Log("angle: " + angle + "angDir: " + angDir);
+        //pointer.transform.rotation *= Quaternion.Euler(0, 0, pointer.transform.rotation.z - angle*angDir);
+        //Quaternion rotation = Quaternion.Euler(0, 0, angle);
+        //pointer.transform.rotation = Quaternion.Slerp(pointer.transform.rotation, rotation, Time.deltaTime * 5.0f);
 	}
 	
 	void CreateObjective() {
