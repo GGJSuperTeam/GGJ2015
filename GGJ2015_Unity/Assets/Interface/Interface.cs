@@ -46,5 +46,9 @@ public class Interface : MonoBehaviour {
 		GUI.Label (timeRect, time, textStyle);
 		
 		GUI.Label (scoreRect, gameManager.GetScore().ToString(), textStyle);
+		
+		if(gameManager.gameOver) {
+		
+		}
 	}
 }

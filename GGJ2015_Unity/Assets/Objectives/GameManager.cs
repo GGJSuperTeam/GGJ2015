@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 	private Rect timeRect;
 	
 	private int score = 0;
+	
+	public bool gameOver = false;
 
 	// Use this for initialization
 	void Start () {
@@ -40,13 +42,19 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	void UpdateTimers() {
-		timer -= Time.deltaTime;
-		if(timer <= 0.0f) GameOver();
+		if(!gameOver) {
+			timer -= Time.deltaTime;
+			if(timer <= 0.0f) GameOver();
+		} else {
+			if(Input.GetButtonDown ("Fire1")) {
+				Application.LoadLevel (0);
+			}	
+		}
 	}
 	
 	void GameOver() {
+		gameOver = true;
 		Debug.Log ("Game Over!");
-		Application.LoadLevel (0); 
 	}
 	
 	string FormatTime(float time) {
