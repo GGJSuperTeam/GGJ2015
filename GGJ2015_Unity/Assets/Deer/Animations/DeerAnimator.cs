@@ -14,6 +14,34 @@ public class DeerAnimator : MonoBehaviour {
 	private bool flipped = false;
 	
 	private Animator animator;
+	
+	public enum DeerLayer
+	{
+		Deer0,
+		Deer1,
+		Deer2,
+		Deer3,
+	}
+	
+	public DeerLayer regularLayer;
+	public DeerLayer oppositeLayer;
+	
+	static string GetLayerName(DeerLayer layer)
+	{
+		switch (layer)
+		{
+		case DeerLayer.Deer0:
+			return "Deer0";
+		case DeerLayer.Deer1:
+			return "Deer1";
+		case DeerLayer.Deer2:
+			return "Deer2";
+		case DeerLayer.Deer3:
+			return "Deer3";
+		default:
+			return "Default";
+		}
+	}
 
 	// Use this for initialization
 	void Awake () {
@@ -25,6 +53,15 @@ public class DeerAnimator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CalculateFace();
+		
+		CalculateLayers();
+	}
+	
+	void CalculateLayers() {
+		if (face == 0) // going up
+			this.renderer.sortingLayerName = GetLayerName(oppositeLayer);
+		else
+			this.renderer.sortingLayerName = GetLayerName(regularLayer);
 	}
 	
 	void CalculateFace() {
