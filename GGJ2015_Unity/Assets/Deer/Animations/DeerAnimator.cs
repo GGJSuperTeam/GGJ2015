@@ -53,10 +53,19 @@ public class DeerAnimator : MonoBehaviour {
             CurrentSpriteFacing = GetBucket(angle);
             
             //UpdateOffset(oldSpriteFacing);
-			
-			animator.SetInteger("Face", (int)CurrentSpriteFacing);
+
+            UpdateAnimation();
 		}
 	}
+
+    void UpdateAnimation()
+    {
+        int face = (int)CurrentSpriteFacing;
+        if (face == 3) // right
+            face = 2; // there is only left
+
+        animator.SetInteger("Face", face);
+    }
 
     void UpdateOffset(SpriteFacing oldSpriteFacing)
     {
