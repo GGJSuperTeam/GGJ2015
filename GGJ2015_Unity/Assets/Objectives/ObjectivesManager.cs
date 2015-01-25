@@ -75,9 +75,13 @@ public class ObjectivesManager : MonoBehaviour {
 	void UpdateTargetIconPosition() {
 		Vector3 targ = Objectives[objectiveIndex].transform.position;
 		if(state == ObjState.turnin) targ = TurninObject.transform.position;
-		
+
+        actualObjPos = Camera.main.WorldToScreenPoint(targ);
+
+        // Offset so icon appears above the object.
+        targ -= new Vector3(0.4f, -1.5f);
 		Vector3 viewPos = Camera.main.WorldToScreenPoint(targ);
-        actualObjPos = viewPos;
+        
 		viewPos.y = Screen.height - viewPos.y;
 		
 		viewPos.x = Mathf.Clamp(viewPos.x, 5.0f, Screen.width - targetIconPos.width);
@@ -105,7 +109,7 @@ public class ObjectivesManager : MonoBehaviour {
 		Vector2 newScreenPos = currPos;
 		newScreenPos.y = Screen.height - newScreenPos.y;
 		newScreenPos.x += targetIconPos.width/2.0f;
-		newScreenPos.y -= targetIconPos.width/2.0f;
+		newScreenPos.y -= targetIconPos.height/2.0f;
 		
 		Vector3 worldPos = Camera.main.ScreenToWorldPoint(newScreenPos);
 		pointer.transform.position = new Vector3(worldPos.x, worldPos.y, -950.0f);
@@ -119,7 +123,7 @@ public class ObjectivesManager : MonoBehaviour {
 		Vector2 newScreenPos = currPos;
 		newScreenPos.y = Screen.height - newScreenPos.y;
 		newScreenPos.x += targetIconPos.width/2.0f;
-		newScreenPos.y -= targetIconPos.width/2.0f;
+		newScreenPos.y -= targetIconPos.height/2.0f + 10.0f;
 		
 		Vector3 worldPos = Camera.main.ScreenToWorldPoint(newScreenPos);
 		pointer.transform.position = new Vector3(worldPos.x, worldPos.y, -950.0f);
