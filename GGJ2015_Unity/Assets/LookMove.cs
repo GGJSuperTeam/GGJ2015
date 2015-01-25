@@ -74,7 +74,6 @@ public class LookMove : MonoBehaviour {
 	// Push object in direction of facing.
 	void UpdateMovement() {
 		// Assumes facing variable was updated in the UpdateFacing() function
-		Debug.Log ("facing = " + facing + " moveSpeed = " + moveSpeed);
 	    if(dir.magnitude > 0.1f || dylMove) {
 			rigidbody2D.AddForce (facing * moveSpeed);
 		}
