@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: 8678efef4b6f77542b430559b47897fa
+guid: 588304ce593b9f441b241e66cd14cf3a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Meeps_AsianMale_Front
-    21300002: Meeps_AsianMale_Front_0
-    21300004: Meeps_AsianMale_Front_1
-    21300006: Meeps_AsianMale_Front_2
-    21300008: Meeps_AsianMale_Front_3
-    21300010: Meeps_AsianMale_Front_4
-    21300012: Meeps_AsianMale_Front_5
-    21300014: Meeps_AsianMale_Front_6
-    21300016: Meeps_AsianMale_Front_7
-    21300018: Meeps_AsianMale_Front_8
-    21300020: Meeps_AsianMale_Front_9
-    21300022: Meeps_AsianMale_Front_10
-    21300024: Meeps_AsianMale_Front_11
-    21300026: Meeps_AsianMale_Front_12
+    21300000: Meeps_Male_AsianGuy_Front
+    21300002: Meeps_Male_AsianGuy_Front_0
+    21300004: Meeps_Male_AsianGuy_Front_1
+    21300006: Meeps_Male_AsianGuy_Front_2
+    21300008: Meeps_Male_AsianGuy_Front_3
+    21300010: Meeps_Male_AsianGuy_Front_4
+    21300012: Meeps_Male_AsianGuy_Front_5
+    21300014: Meeps_Male_AsianGuy_Front_6
+    21300016: Meeps_Male_AsianGuy_Front_7
+    21300018: Meeps_Male_AsianGuy_Front_8
+    21300020: Meeps_Male_AsianGuy_Front_9
+    21300022: Meeps_Male_AsianGuy_Front_10
+    21300024: Meeps_Male_AsianGuy_Front_11
+    21300026: Meeps_Male_AsianGuy_Front_12
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -57,7 +57,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Meeps_AsianMale_Front_0
+    - name: Meeps_Male_AsianGuy_Front_0
       rect:
         serializedVersion: 2
         x: 1
@@ -65,9 +65,9 @@ TextureImporter:
         width: 53
         height: 140
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_1
+    - name: Meeps_Male_AsianGuy_Front_1
       rect:
         serializedVersion: 2
         x: 55
@@ -75,9 +75,9 @@ TextureImporter:
         width: 108
         height: 139
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_2
+    - name: Meeps_Male_AsianGuy_Front_2
       rect:
         serializedVersion: 2
         x: 163
@@ -85,9 +85,9 @@ TextureImporter:
         width: 56
         height: 137
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_3
+    - name: Meeps_Male_AsianGuy_Front_3
       rect:
         serializedVersion: 2
         x: 276
@@ -95,9 +95,9 @@ TextureImporter:
         width: 56
         height: 137
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_4
+    - name: Meeps_Male_AsianGuy_Front_4
       rect:
         serializedVersion: 2
         x: 333
@@ -105,9 +105,9 @@ TextureImporter:
         width: 55
         height: 138
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_5
+    - name: Meeps_Male_AsianGuy_Front_5
       rect:
         serializedVersion: 2
         x: 389
@@ -115,9 +115,9 @@ TextureImporter:
         width: 54
         height: 139
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_6
+    - name: Meeps_Male_AsianGuy_Front_6
       rect:
         serializedVersion: 2
         x: 444
@@ -125,9 +125,9 @@ TextureImporter:
         width: 53
         height: 139
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_7
+    - name: Meeps_Male_AsianGuy_Front_7
       rect:
         serializedVersion: 2
         x: 54
@@ -135,9 +135,9 @@ TextureImporter:
         width: 55
         height: 139
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_8
+    - name: Meeps_Male_AsianGuy_Front_8
       rect:
         serializedVersion: 2
         x: 110
@@ -145,9 +145,9 @@ TextureImporter:
         width: 57
         height: 138
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_9
+    - name: Meeps_Male_AsianGuy_Front_9
       rect:
         serializedVersion: 2
         x: 167
@@ -155,9 +155,9 @@ TextureImporter:
         width: 58
         height: 136
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_10
+    - name: Meeps_Male_AsianGuy_Front_10
       rect:
         serializedVersion: 2
         x: 225
@@ -165,9 +165,9 @@ TextureImporter:
         width: 60
         height: 135
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_11
+    - name: Meeps_Male_AsianGuy_Front_11
       rect:
         serializedVersion: 2
         x: 347
@@ -175,9 +175,9 @@ TextureImporter:
         width: 60
         height: 135
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Meeps_AsianMale_Front_12
+    - name: Meeps_Male_AsianGuy_Front_12
       rect:
         serializedVersion: 2
         x: 407
@@ -185,7 +185,7 @@ TextureImporter:
         width: 59
         height: 136
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

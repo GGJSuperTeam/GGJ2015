@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 196fd302eea601849b7f5f4a1b526d89
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Meeps_Male_AsianGuy_Side
+    21300002: Meeps_Male_AsianGuy_Side_0
+    21300004: Meeps_Male_AsianGuy_Side_1
+    21300006: Meeps_Male_AsianGuy_Side_2
+    21300008: Meeps_Male_AsianGuy_Side_3
+    21300010: Meeps_Male_AsianGuy_Side_4
+    21300012: Meeps_Male_AsianGuy_Side_5
+    21300014: Meeps_Male_AsianGuy_Side_6
+    21300016: Meeps_Male_AsianGuy_Side_7
+    21300018: Meeps_Male_AsianGuy_Side_8
+    21300020: Meeps_Male_AsianGuy_Side_9
+    21300022: Meeps_Male_AsianGuy_Side_10
+    21300024: Meeps_Male_AsianGuy_Side_11
+    21300026: Meeps_Male_AsianGuy_Side_12
+    21300028: Meeps_Male_AsianGuy_Side_13
+    21300030: Meeps_Male_AsianGuy_Side_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Meeps_Male_AsianGuy_Side_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 376
+        width: 43
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 379
+        width: 85
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_2
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 383
+        width: 44
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_3
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 381
+        width: 43
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_4
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 378
+        width: 85
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_5
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 376
+        width: 44
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_6
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 374
+        width: 44
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_7
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 375
+        width: 44
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 239
+        width: 45
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_9
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 240
+        width: 46
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_10
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 242
+        width: 47
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_11
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 243
+        width: 49
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_12
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 240
+        width: 46
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_13
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 239
+        width: 45
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Side_14
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 237
+        width: 44
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

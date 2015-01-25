@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: fef99c090d2c1ae4dbc289a368a0f5e8
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Meeps_Male_AsianGuy_Back
+    21300002: Meeps_Male_AsianGuy_Back_0
+    21300004: Meeps_Male_AsianGuy_Back_1
+    21300006: Meeps_Male_AsianGuy_Back_2
+    21300008: Meeps_Male_AsianGuy_Back_3
+    21300010: Meeps_Male_AsianGuy_Back_4
+    21300012: Meeps_Male_AsianGuy_Back_5
+    21300014: Meeps_Male_AsianGuy_Back_6
+    21300016: Meeps_Male_AsianGuy_Back_7
+    21300018: Meeps_Male_AsianGuy_Back_8
+    21300020: Meeps_Male_AsianGuy_Back_9
+    21300022: Meeps_Male_AsianGuy_Back_10
+    21300024: Meeps_Male_AsianGuy_Back_11
+    21300026: Meeps_Male_AsianGuy_Back_12
+    21300028: Meeps_Male_AsianGuy_Back_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Meeps_Male_AsianGuy_Back_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 374
+        width: 53
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 377
+        width: 55
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 381
+        width: 57
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_3
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 384
+        width: 59
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_4
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 386
+        width: 62
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_5
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 384
+        width: 59
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_6
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 382
+        width: 58
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_7
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 379
+        width: 56
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 237
+        width: 164
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_9
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 242
+        width: 57
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_10
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 244
+        width: 60
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_11
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 244
+        width: 58
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_12
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 241
+        width: 57
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Meeps_Male_AsianGuy_Back_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 55
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
