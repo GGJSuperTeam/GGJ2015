@@ -85,7 +85,7 @@ public class ObjectivesManager : MonoBehaviour {
 		viewPos.y = Screen.height - viewPos.y;
 		
 		viewPos.x = Mathf.Clamp(viewPos.x, 5.0f, Screen.width - targetIconPos.width);
-		viewPos.y = Mathf.Clamp(viewPos.y, 5.0f, Screen.height - targetIconPos.width);
+		viewPos.y = Mathf.Clamp(viewPos.y, 5.0f, Screen.height - targetIconPos.width - 15.0f);
 		
 		/*if(viewPos.x < -1.0f) viewPos.x = -1.0f;
 		if(viewPos.x > 1.0f) viewPos.x = 1.0f;
