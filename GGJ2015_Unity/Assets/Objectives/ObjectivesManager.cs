@@ -177,6 +177,7 @@ public class ObjectivesManager : MonoBehaviour {
 	
 	public void CompleteObjective() {
 		gameManager.AddTime(gameManager.TimePerTask);
+		gameManager.AddScore (1);
 		
 		TurninObject.GetComponent<Objective>().objectiveActive = false;
 		pointer.renderer.enabled = false;

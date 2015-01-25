@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour {
 	
 	private float timer = 0.0f;
 	private Rect timeRect;
+	
+	private int score = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +20,18 @@ public class GameManager : MonoBehaviour {
 	
 	public void AddTime(float extraTime) {
 		timer += extraTime;
+	}
+	
+	public float GetTime() {
+		return timer;
+	}
+	
+	public float GetScore() {
+		return score;
+	}
+	
+	public void AddScore(int amount) {
+		score += amount;
 	}
 	
 	// Update is called once per frame
