@@ -33,6 +33,8 @@ public class LookMove : MonoBehaviour {
 			thumbstickAxes[1] = "RVertical";
 		}
         if (invertDirection) invert = -1.0f;
+        
+		facing = new Vector2(transform.up.x, transform.up.y); // update 2d vector for direction we're facing.
 	}
 	
 	// Update is called once per frame
@@ -66,6 +68,8 @@ public class LookMove : MonoBehaviour {
             float angDir = HelperFunctions.AngleDir(dir, facing);
 
             angDir *= invert;
+            
+			//Vector2 newDir = Quaternion.AngleAxis(angle*angDir, Vector3.forward) * Vector2.up;
 
             if(!noLook) rigidbody2D.AddTorque(angDir * angle * rotationSpeed);
         }

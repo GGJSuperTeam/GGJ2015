@@ -5,6 +5,9 @@ public class FollowTarget : MonoBehaviour {
 
 	public Transform target;
 	public float speed = 1.0f;
+	public bool instant = false;
+	public float offsetX = 0.0f;
+	public float offsetY = 0.0f;
 	
 	private Vector3 self;
 	private Vector3 targ;
@@ -27,6 +30,11 @@ public class FollowTarget : MonoBehaviour {
 			
 			Vector3 diff3 = new Vector3(diff.x, diff.y, 0);
 			transform.position += diff3 * speed * Time.deltaTime;
+			
+			if(instant) {
+				Vector3 newPos = new Vector3(target.position.x + offsetX, target.position.y + offsetY, target.position.z);
+				transform.position = newPos;
+			}
 		}
 	}
 }
