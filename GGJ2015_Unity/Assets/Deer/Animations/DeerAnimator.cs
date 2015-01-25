@@ -3,7 +3,8 @@ using System.Collections;
 
 public class DeerAnimator : MonoBehaviour {
 
-	public int face = 0;	
+    public int face = 0;
+    public GameObject CentrePart;
 	
 	public Rigidbody2D customRigidbody;
 	public bool noFlip = false;
@@ -31,12 +32,16 @@ public class DeerAnimator : MonoBehaviour {
 		
 		CalculateLayers();
 	}
-	
-	void CalculateLayers() {
+
+    void CalculateLayers() {
+        var order = (int)(10 * CentrePart.renderer.bounds.center.y);
+
         if (face == 0) // going up
-            this.renderer.sortingOrder = upLayer;
+            order += upLayer;
         else
-            this.renderer.sortingOrder = defaultLayer;
+            order += defaultLayer;
+
+        renderer.sortingOrder = order;
 	}
 	
 	void CalculateFace() {
