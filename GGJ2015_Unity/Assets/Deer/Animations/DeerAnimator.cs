@@ -1,50 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DeerAnimator : MonoBehaviour {
 
-    private int face = 0;
     public GameObject CentrePart;
-	
+    public DeerPart Part;
+
 	public Rigidbody2D customRigidbody;
 	public bool noFlip = false;
+
+    SpriteFacing CurrentSpriteFacing;
+	Vector2 up = Vector2.up;
+	Vector2 facing = Vector2.zero;
 	
-	private Vector2 up = Vector2.up;
-	private Vector2 facing = Vector2.zero;
+	bool flipped = false;
 	
-	private bool flipped = false;
-	
-	private Animator animator;
-	
-    public int defaultLayer;
-    public int upLayer { get { return 3 - defaultLayer; } }
+	Animator animator;
 
 	// Use this for initialization
 	void Awake () {
 		animator = GetComponent<Animator>();
 		
-		if(customRigidbody == null)  customRigidbody = rigidbody2D;
+		if(customRigidbody == null)
+            customRigidbody = rigidbody2D;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		CalculateFace();
-		
+		CalculateFacing();
 		CalculateLayers();
 	}
 
     void CalculateLayers() {
         var order = (int)(10 * -CentrePart.renderer.bounds.center.y);
-
-        if (face == 0) // going up
-            order += upLayer;
-        else
-            order += defaultLayer;
+        order += DeerInfoManager.GetOrder(Part, CurrentSpriteFacing);
 
         renderer.sortingOrder = order;
 	}
 	
-	void CalculateFace() {
+	void CalculateFacing() {
 		if(customRigidbody.velocity.magnitude > 0.1f) {
 			facing = new Vector2(customRigidbody.velocity.x, customRigidbody.velocity.y); // update 2d vector for direction we're facing.
 			
@@ -54,25 +49,46 @@ public class DeerAnimator : MonoBehaviour {
 			if(angDir < 0.0f) angle = 360.0f - angle;
 			
 			// Bucket the shit
-			face = GetBucket(angle);
+            var oldSpriteFacing = CurrentSpriteFacing;
+            CurrentSpriteFacing = GetBucket(angle);
+            
+            //UpdateOffset(oldSpriteFacing);
 			
-			animator.SetInteger("Face", face);
+			animator.SetInteger("Face", (int)CurrentSpriteFacing);
 		}
 	}
+
+    void UpdateOffset(SpriteFacing oldSpriteFacing)
+    {
+        Vector2 oldOffset = DeerInfoManager.GetOffset(Part, oldSpriteFacing);
+        Vector2 newOffset = DeerInfoManager.GetOffset(Part, CurrentSpriteFacing);
+
+        //// nope
+        //customRigidbody.position = customRigidbody.position - oldOffset + newOffset;
+
+        //// nope
+        //transform.parent.localPosition = new Vector3(newOffset.x, newOffset.y, transform.parent.localPosition.z);
+    }
 	
-	int GetBucket(float angle) {
-		if(angle > 315.0f || angle < 45.0f) return 0; // up
+	SpriteFacing GetBucket(float angle) {
+        if (angle > 315.0f || angle < 45.0f) {
+            return SpriteFacing.Up;
+        }
+
+        if (angle > 135.0f && angle < 225.0f) {
+            return SpriteFacing.Down;
+        }
 		
-		if(angle > 135.0f && angle < 225.0f) return 1; // down
-		
-		if(angle > 225.0f && angle < 315.0f) { // left
-			if(flipped) Flip();
-			return 2; 
+		if(angle > 225.0f && angle < 315.0f) {
+			if(flipped)
+                Flip();
+            return SpriteFacing.Left;
 		}
 		
-		if(angle > 45.0f && angle < 135.0f) { // right
-			if(!flipped) Flip();
-			return 2;
+		if(angle > 45.0f && angle < 135.0f) {
+			if(!flipped)
+                Flip();
+            return SpriteFacing.Right;
 		}
 		
 		return 0;

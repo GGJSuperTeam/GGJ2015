@@ -79,7 +79,7 @@ public class ObjectivesManager : MonoBehaviour {
 		Vector3 viewPos = Camera.main.WorldToScreenPoint(targ);
 		viewPos.y = Screen.height - viewPos.y;
 		
-		Debug.Log ("viewPos = " + viewPos);
+		//Debug.Log ("viewPos = " + viewPos);
 		
 		viewPos.x = Mathf.Clamp(viewPos.x, 5.0f, Screen.width - targetIconPos.width);
 		viewPos.y = Mathf.Clamp(viewPos.y, 5.0f, Screen.height - targetIconPos.width);
