@@ -5,6 +5,8 @@ public class ObjectivesManager : MonoBehaviour {
 	
 	enum ObjState { none, alert, warm, find, turnin }
 	
+	public GameObject PointerObject;
+	
 	public Texture2D StartIcon;
 	public Texture2D EndIcon;
 	public Texture2D[] Icons;
@@ -25,6 +27,8 @@ public class ObjectivesManager : MonoBehaviour {
 	
 	GameManager gameManager;	
 
+	//Vector2 actualObjPos = Vector2.zero;
+
 	Rect currIconPos;
 	Rect startIconPos;
 	Rect targetIconPos;
@@ -33,6 +37,8 @@ public class ObjectivesManager : MonoBehaviour {
 	
 	float waitTime = 1.0f;
 	float waitTimer = 0.0f;
+	
+	GameObject pointer;
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +47,9 @@ public class ObjectivesManager : MonoBehaviour {
 		iconWidth = Screen.width/25.0f;
 		
 		startIconPos = new Rect(Screen.width/2.0f - iconWidth/2.0f, iconWidth, iconWidth, iconWidth);
+		
+		pointer = (GameObject)Instantiate(PointerObject, Vector3.zero, Quaternion.identity);
+		pointer.renderer.enabled = false;
 		
 		CreateObjective();
 	}
@@ -57,6 +66,10 @@ public class ObjectivesManager : MonoBehaviour {
 			UpdateTargetIconPosition();
 			UpdateCurrentIcon();
 		} 
+		
+		if(state != ObjState.none) {
+			UpdatePointer();
+		}
 	}
 
 	void UpdateTargetIconPosition() {
@@ -69,7 +82,7 @@ public class ObjectivesManager : MonoBehaviour {
 		Debug.Log ("viewPos = " + viewPos);
 		
 		viewPos.x = Mathf.Clamp(viewPos.x, 5.0f, Screen.width - targetIconPos.width);
-		viewPos.y = Mathf.Clamp(viewPos.y, 5.0f, Screen.width - targetIconPos.width);
+		viewPos.y = Mathf.Clamp(viewPos.y, 5.0f, Screen.height - targetIconPos.width);
 		
 		/*if(viewPos.x < -1.0f) viewPos.x = -1.0f;
 		if(viewPos.x > 1.0f) viewPos.x = 1.0f;
@@ -77,8 +90,10 @@ public class ObjectivesManager : MonoBehaviour {
 		if(viewPos.y < -1.0f) viewPos.y = -1.0f;
 		if(viewPos.y > 1.0f) viewPos.y = 1.0f;*/
 		
-		targetIconPos.x = viewPos.x;// * Screen.width ;
-		targetIconPos.y = viewPos.y;// * Screen.height;
+		targetIconPos.x = viewPos.x;//-targetIconPos.width/2.0f;// * Screen.width ;
+		targetIconPos.y = viewPos.y;// - targetIconPos.width;///2.0f;// * Screen.height;
+		
+		//actualObjPos = viewPos;
 	}
 	
 	void UpdateCurrentIcon() {
@@ -87,8 +102,41 @@ public class ObjectivesManager : MonoBehaviour {
 		
 		currPos = Vector2.Lerp (currPos, targPos, Time.deltaTime * 10.0f);
 		
-		currIconPos.x = currPos.x;
-		currIconPos.y = currPos.y;
+		currIconPos.x = currPos.x;// + targetIconPos.width/2.0f;
+		currIconPos.y = currPos.y;// - targetIconPos.width;
+		
+		Vector2 newScreenPos = currPos;
+		newScreenPos.y = Screen.height - newScreenPos.y;
+		newScreenPos.x += targetIconPos.width/2.0f;
+		newScreenPos.y -= targetIconPos.width/2.0f;
+		
+		Vector3 worldPos = Camera.main.ScreenToWorldPoint(newScreenPos);
+		pointer.transform.position = new Vector3(worldPos.x, worldPos.y, -950.0f);
+		
+		
+	}
+	
+	void UpdatePointer() {
+		Vector2 currPos = new Vector2(currIconPos.x, currIconPos.y);
+		
+		Vector2 newScreenPos = currPos;
+		newScreenPos.y = Screen.height - newScreenPos.y;
+		newScreenPos.x += targetIconPos.width/2.0f;
+		newScreenPos.y -= targetIconPos.width/2.0f;
+		
+		Vector3 worldPos = Camera.main.ScreenToWorldPoint(newScreenPos);
+		pointer.transform.position = new Vector3(worldPos.x, worldPos.y, -950.0f);
+		
+		// Rotate the pointer to face the target object.
+		/*pointer.transform.rotation = Quaternion.identity;
+		
+		Vector2 dir = actualObjPos - newScreenPos;
+		float angle = Vector2.Angle(Vector2.up, dir);
+		float angDir = HelperFunctions.AngleDir(dir, Vector2.up);*/
+		
+		//Debug.DrawLine (worldPos, worldPos + new Vector3(dir.x, dir.y, 0.0f) * 5.0f);
+		
+		//pointer.transform.Rotate (new Vector3(0,0,angle*angDir));
 	}
 	
 	void CreateObjective() {
@@ -103,6 +151,8 @@ public class ObjectivesManager : MonoBehaviour {
 		if(objectiveIndex > Icons.Length) iconIndex = Icons.Length-1;
 		
 		state = ObjState.alert;
+		
+		pointer.renderer.enabled = true;
 	}
 	
 	void ActivateObjective() {
@@ -121,9 +171,10 @@ public class ObjectivesManager : MonoBehaviour {
 	}
 	
 	public void CompleteObjective() {
-		gameManager.AddTime(20.0f);
+		gameManager.AddTime(gameManager.TimePerTask);
 		
-		Objectives[objectiveIndex].GetComponent<Objective>().objectiveActive = false;
+		TurninObject.GetComponent<Objective>().objectiveActive = false;
+		pointer.renderer.enabled = false;
 		
 		CreateObjective();
 	}

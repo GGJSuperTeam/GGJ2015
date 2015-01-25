@@ -4,6 +4,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public float GameTime = 30.0f;
+	public float TimePerTask = 12.0f;
 	
 	private float timer = 0.0f;
 	private Rect timeRect;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour {
 	
 	void GameOver() {
 		Debug.Log ("Game Over!");
+		Application.LoadLevel (0); 
 	}
 	
 	string FormatTime(float time) {
