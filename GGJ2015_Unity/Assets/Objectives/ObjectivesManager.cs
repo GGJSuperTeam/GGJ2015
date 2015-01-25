@@ -77,9 +77,8 @@ public class ObjectivesManager : MonoBehaviour {
 		if(state == ObjState.turnin) targ = TurninObject.transform.position;
 		
 		Vector3 viewPos = Camera.main.WorldToScreenPoint(targ);
+        actualObjPos = viewPos;
 		viewPos.y = Screen.height - viewPos.y;
-		
-		//Debug.Log ("viewPos = " + viewPos);
 		
 		viewPos.x = Mathf.Clamp(viewPos.x, 5.0f, Screen.width - targetIconPos.width);
 		viewPos.y = Mathf.Clamp(viewPos.y, 5.0f, Screen.height - targetIconPos.width);
@@ -92,8 +91,6 @@ public class ObjectivesManager : MonoBehaviour {
 		
 		targetIconPos.x = viewPos.x;//-targetIconPos.width/2.0f;// * Screen.width ;
 		targetIconPos.y = viewPos.y;// - targetIconPos.width;///2.0f;// * Screen.height;
-		
-		actualObjPos = viewPos;
 	}
 	
 	void UpdateCurrentIcon() {
@@ -127,14 +124,20 @@ public class ObjectivesManager : MonoBehaviour {
 		Vector3 worldPos = Camera.main.ScreenToWorldPoint(newScreenPos);
 		pointer.transform.position = new Vector3(worldPos.x, worldPos.y, -950.0f);
 		
-		// Rotate the pointer to face the target object.	
-        // NOPE. 
-		//float angle = Vector2.Angle(newScreenPos, actualObjPos);
-		//float angDir = HelperFunctions.AngleDir(newScreenPos.normalized, actualObjPos.normalized);
-        //Debug.Log("angle: " + angle + "angDir: " + angDir);
-        //pointer.transform.rotation *= Quaternion.Euler(0, 0, pointer.transform.rotation.z - angle*angDir);
-        //Quaternion rotation = Quaternion.Euler(0, 0, angle);
-        //pointer.transform.rotation = Quaternion.Slerp(pointer.transform.rotation, rotation, Time.deltaTime * 5.0f);
+		// Rotate the pointer to face the target object.
+        Vector2 dirOfVector = actualObjPos - newScreenPos;
+        float angle = Vector2.Angle(Vector2.up, dirOfVector);
+        Vector3 cross = Vector3.Cross(Vector2.up, dirOfVector);
+        Debug.Log(" newScreenPos: " + newScreenPos + " actualObjPos: " + actualObjPos);
+        Debug.Log("angle: " + angle);
+        
+        if (cross.z < 0) {
+            Quaternion rotation = Quaternion.Euler(0, 0, 360.0f-angle);
+            pointer.transform.rotation = Quaternion.Slerp(pointer.transform.rotation, rotation, Time.deltaTime * 5.0f);
+        } else {
+            Quaternion rotation = Quaternion.Euler(0, 0, angle);
+            pointer.transform.rotation = Quaternion.Slerp(pointer.transform.rotation, rotation, Time.deltaTime * 5.0f);
+        }
 	}
 	
 	void CreateObjective() {
