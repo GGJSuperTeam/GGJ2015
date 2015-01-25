@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DeerAnimator : MonoBehaviour {
 
-    public int face = 0;
+    private int face = 0;
     public GameObject CentrePart;
 	
 	public Rigidbody2D customRigidbody;
@@ -34,7 +34,7 @@ public class DeerAnimator : MonoBehaviour {
 	}
 
     void CalculateLayers() {
-        var order = (int)(10 * CentrePart.renderer.bounds.center.y);
+        var order = (int)(10 * -CentrePart.renderer.bounds.center.y);
 
         if (face == 0) // going up
             order += upLayer;
