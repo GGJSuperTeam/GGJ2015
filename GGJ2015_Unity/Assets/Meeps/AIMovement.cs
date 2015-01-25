@@ -31,7 +31,6 @@ public class AIMovement : MonoBehaviour {
 	}
 	
 	void UpdateWander() {
-		Debug.Log("Updating Wander");
 		timer -= Time.deltaTime;
 		if(timer <= 0.0f) {
 			DecideNewAction();
@@ -43,7 +42,6 @@ public class AIMovement : MonoBehaviour {
 	}
 	
 	void DecideNewAction() {
-		Debug.Log ("deciding new action");
 		float rnd = Random.value;
 		if(rnd < 0.2f) { wait = true; }
 		else {
