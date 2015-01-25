@@ -132,8 +132,6 @@ public class ObjectivesManager : MonoBehaviour {
         Vector2 dirOfVector = actualObjPos - newScreenPos;
         float angle = Vector2.Angle(Vector2.up, dirOfVector);
         Vector3 cross = Vector3.Cross(Vector2.up, dirOfVector);
-        Debug.Log(" newScreenPos: " + newScreenPos + " actualObjPos: " + actualObjPos);
-        Debug.Log("angle: " + angle);
         
         if (cross.z < 0) {
             Quaternion rotation = Quaternion.Euler(0, 0, 360.0f-angle);
