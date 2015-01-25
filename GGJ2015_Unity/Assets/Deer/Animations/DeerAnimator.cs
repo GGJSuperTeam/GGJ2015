@@ -5,6 +5,9 @@ public class DeerAnimator : MonoBehaviour {
 
 	public int face = 0;	
 	
+	public Rigidbody2D customRigidbody;
+	public bool noFlip = false;
+	
 	private Vector2 up = Vector2.up;
 	private Vector2 facing = Vector2.zero;
 	
@@ -15,6 +18,8 @@ public class DeerAnimator : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		animator = GetComponent<Animator>();
+		
+		if(customRigidbody == null)  customRigidbody = rigidbody2D;
 	}
 	
 	// Update is called once per frame
@@ -23,17 +28,19 @@ public class DeerAnimator : MonoBehaviour {
 	}
 	
 	void CalculateFace() {
-		facing = new Vector2(transform.up.x, transform.up.y); // update 2d vector for direction we're facing.
-		
-		float angle = Vector2.Angle (up, facing);
-		float angDir = HelperFunctions.AngleDir(up, facing);
-		
-		if(angDir < 0.0f) angle = 360.0f - angle;
-		
-		// Bucket the shit
-		face = GetBucket(angle);
-		
-		animator.SetInteger("Face", face);
+		if(customRigidbody.velocity.magnitude > 0.1f) {
+			facing = new Vector2(customRigidbody.velocity.x, customRigidbody.velocity.y); // update 2d vector for direction we're facing.
+			
+			float angle = Vector2.Angle (up, facing);
+			float angDir = HelperFunctions.AngleDir(up, facing);
+			
+			if(angDir < 0.0f) angle = 360.0f - angle;
+			
+			// Bucket the shit
+			face = GetBucket(angle);
+			
+			animator.SetInteger("Face", face);
+		}
 	}
 	
 	int GetBucket(float angle) {
@@ -55,8 +62,10 @@ public class DeerAnimator : MonoBehaviour {
 	}
 	
 	void Flip() {
-		flipped = !flipped;
-		Vector3 newScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-		transform.localScale = newScale;
+		if(!noFlip) {
+			flipped = !flipped;
+			Vector3 newScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+			transform.localScale = newScale;
+		}
 	}
 }
