@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour {
 	
 	public bool gameOver = false;
 
+	public string[] rankings;
+	public string[] descriptions;
+
 	// Use this for initialization
 	void Start () {
 		timer = GameTime;
@@ -32,6 +35,14 @@ public class GameManager : MonoBehaviour {
 		return score;
 	}
 	
+	public string GetRank() {
+		return rankings[score/10];
+	}
+	
+	public string GetDescription() {
+		return descriptions[score/10];
+	}
+	
 	public void AddScore(int amount) {
 		score += amount;
 	}
@@ -39,6 +50,8 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		UpdateTimers();
+		
+		GetRank();
 	}
 	
 	void UpdateTimers() {
@@ -50,6 +63,8 @@ public class GameManager : MonoBehaviour {
 				Application.LoadLevel (0);
 			}	
 		}
+		
+		if(Input.GetKeyDown (KeyCode.Escape)) Application.Quit ();
 	}
 	
 	void GameOver() {

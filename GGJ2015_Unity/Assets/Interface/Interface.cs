@@ -6,6 +6,8 @@ public class Interface : MonoBehaviour {
 
 	public Texture2D Hud;
 	public GUIStyle textStyle;
+	public GUIStyle scoreStyle;
+	public Texture2D blackPixel;
 	
 	Rect hudRect;
 	
@@ -40,6 +42,8 @@ public class Interface : MonoBehaviour {
 	}
 	
 	void OnGUI() {
+		Color oldColor = GUI.color;
+		GUI.color = new Color(oldColor.r, oldColor.g, oldColor.b, 1.0f);
 		GUI.DrawTexture (hudRect, Hud);
 		
 		string time = FormatTime(gameManager.GetTime ());
@@ -48,7 +52,13 @@ public class Interface : MonoBehaviour {
 		GUI.Label (scoreRect, gameManager.GetScore().ToString(), textStyle);
 		
 		if(gameManager.gameOver) {
-		
+			GUI.color = new Color(oldColor.r, oldColor.g, oldColor.b, 0.5f);
+			GUI.DrawTexture (new Rect(0,0,Screen.width, Screen.height), blackPixel);
+			
+			
+			string scoreString = gameManager.GetScore().ToString () + "\n\n" + gameManager.GetRank() + "\n\n" + gameManager.GetDescription();
+			GUI.color = new Color(oldColor.r, oldColor.g, oldColor.b, 1.0f);
+			GUI.Label (new Rect(Screen.width/4.0f,Screen.height/4.0f,2.0f*Screen.width/4.0f, 2.0f*Screen.height/4.0f), scoreString, scoreStyle);
 		}
 	}
 }
