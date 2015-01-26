@@ -14,6 +14,7 @@
 *.booproj
 *.dll
 *.dll.meta
+*EditorBuildSettings.asset
 
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
